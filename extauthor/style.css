@@ -1,0 +1,211 @@
+/*note this file has been appended to the styles.css files*/
+/*contained in the TA and Cal folders, so changes made here*/
+/*should also be made in those files as well*/
+
+/* Tab navigation */
+ul.primary {
+  border-collapse: collapse;
+  padding: 0 0 0 1em;
+  white-space: nowrap;
+  list-style: none;
+  margin: 5px;
+  height: auto;
+  line-height: normal;
+  border-bottom: 1px solid #BBBBBB;
+}
+ul.primary li {
+  display: inline;
+}
+ul.primary li a {
+  background-color: #DDD6BE;
+  border-color: #BBBBBB;
+  border-width: 1px;
+  border-style: solid solid none solid;
+  height: auto;
+  margin-right: 0.5em;
+  padding: 0 1em;
+  text-decoration: none;
+}
+ul.primary li.active a {
+  background-color: #FFF8DC;
+  border: 1px solid #BBBBBB;
+  border-bottom: #FFFFFF 1px solid;
+}
+ul.primary li a:hover {
+  background-color: #EEE7CD;
+  border-color: #CCCCCC;
+  border-bottom-color: #EEEEEE;
+}
+ul.secondary {
+  border-bottom: 1px solid #BBBBBB;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 5px;
+}
+ul.secondary li {
+  display: inline;
+  padding: 0 1em;
+  border-right: 1px solid #CCCCCC;
+}
+ul.secondary a {
+  padding: 0;
+  text-decoration: none;
+}
+ul.secondary a.active {
+  border-bottom: 4px solid #999999;
+}
+
+/* Course elements */
+
+ul.Topic {
+    color:black;
+   }
+
+ul.MandatoryPreparation {
+    color: mediumseagreen;
+    font-weight: bold;
+}
+
+ul.SuggestedPreparation {
+    color:firebrick;
+   }
+
+td.Module {
+   color: purple;
+}
+
+td.ModuleDivider {
+   background-color: #BB55BB;
+}
+
+td.Warning {
+   background-color: orange; color: black;
+}
+
+td.Free {
+   background-color: blue; color: white;
+}
+
+td.OptionalHelp {
+   background-color:palegreen; color: black;
+}
+
+td.Recitation {
+   background-color:palegreen; color: black;
+}
+
+td.Seminar {
+   background-color:coral; color: black;
+}
+
+td.Lecture {
+   background-color: #BBBBEE; color: black;
+}
+
+td.Help {
+   background-color: #DDDDFF; color: black;
+}
+
+td.Video {
+   background-color: gold; color: black;
+}
+
+td.BLTExercise {
+   background-color: azure; color: black;
+}
+
+td.RoundTable {
+   background-color: DarkSalmon; color: black;
+}
+
+td.Lab {
+   background-color: #FFCCCC; color: black;
+}
+
+td.Studio {
+   background-color: #EEEE88; color: black;
+}
+
+td.Grading {
+   background-color: #FFBBFF; color: black;
+}
+
+td.OfficeHours {
+   background-color: goldenrod; color: black;
+}
+
+
+ul {
+    margin-bottom:0px;
+    margin-left:15px;
+    padding-left:8px;
+    margin-right:8px;
+    padding-right:8px;
+   }
+
+ul > li {
+   padding-top:1px;
+   padding-bottom: 1px;
+}
+
+ol > li {
+   padding-top:1px;
+   padding-bottom: 1px;
+   padding:4px 8px;
+}
+
+ol {
+    margin-bottom:0px;
+    margin-left:15px;
+    padding-left:8px;
+    margin-right:8px;
+    padding-right:8px;
+   }
+
+table.small { font-size: 80%; }
+
+/* body formatting */
+
+TD { font-size: 12px;}
+KBD{color: #BB00BB; font-size: 9.3pt; font-family:monospace; font-weight: 550}
+CODE{color: #BB00BB; font-size: 9.3pt; font-family:monospace; font-weight: 550}
+TT{color: #BB00BB; font-size: 9.3pt; font-family:monospace; font-weight: 550}
+PRE{color: #BB22BB; font-family:monospace;font-size:9.3pt; font-weight: 650}
+H3 { color: SaddleBrown }
+H4 { color: blue }
+BLOCKQUOTE {  border-style: solid; color: #004400; background-color: #FFFFF7; border: 2px solid #FC8A42; 
+padding-top: 7px;
+padding-bottom: 7px;
+padding-left: 7px;
+padding-right: 7px;
+}
+BLOCKQUOTE.demo {
+   background-color: #88FF88;
+}
+th.rotate {
+  /* Something you can count on */
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(25px, 51px)
+    /* 45 is really 360 - 45 */
+    rotate(315deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+B,I,EM,DT { color: green }
+DL { padding: 5.0px; }
+DT { padding: 2.5px; }
+DD { padding: 2.5px; text-indent: -5px; }
+DL.menu { padding: 0px; }
+DD.menu { padding: 0px; text-indent: -32px; }
+A:link,A:visited {text-decoration: none; color: firebrick }
+A:active {text-decoration: none}
+A:hover {text-decoration: underline; color: darkred}
+BODY {font-family: arial; font-size: 12px; background-color: #FFFADD}

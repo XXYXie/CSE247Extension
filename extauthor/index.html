@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<TITLE>Lab 3:  Hashing</TITLE>
+<link rel="stylesheet" href="style.css" type="text/css">
+</HEAD>
+<BODY>
+<BLOCKQUOTE>
+<UL>
+ <LI> Welcome to the Shortest Path With Negative Edge extension.
+
+</UL>
+</BLOCKQUOTE>
+<CENTER><H2>
+<!--#include virtual="start.html"--><br>
+Shortest Path With Negative Edge<br>
+Author:  Han Liu and Xueyan Xie
+</H2>
+
+
+</H2>
+</CENTER>
+<EM>Abstract:</EM>  We have seen Dijkstra's algorithm to compute the shortest path in a weighted
+graph. However, Dijkstra's algorithm fails when it comes to paths containing negative weights. 
+<p>
+In this extension, you will use Bellman–Ford algorithm to handle graphs in which some of 
+the edge weights are negative numbers.
+<p>
+This algorithm is discussed in Chapter 24 of our text, on page 645.
+<HR>
+<H2>Introduction</H2>
+<p>
+First, let's think about why Dijkstra's algorithm fails when negative edges exist.
+Recall that in our implementation for Dijkstra's algorithm, after we extract a vertex from the Minheap,
+we no longer update it since it has the shortest distance from the starting vertex.
+What will happen if the weights of edges can be negative?
+</p>
+Here is an example.
+<p>
+	<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Dijkstra-negative-edge-weights-error.svg/400px-Dijkstra-negative-edge-weights-error.svg.png"/>
+</p>
+<p>
+Starting in vertex 1, Dijkstra's algorithm will choose the edge (1,2) and (1,4), relax
+vertex 2 and vertex 4 and set dist(vertex 2)=1 and 
+dist(vertex 4)=4. dist(vertex 2) is smallest distance, when we extract vertex from 
+Minheap, Dijkstra's algorithm will relax vertex 3 and set dist(vertex 3)=2. When we extract vertex again, 
+vertex 3 will be extracted. Vertex 4 will be the last vertex in the Minheap. With nothing to update,
+it will be extracted and the Minheap will be empty. The shortest path we find is 1 -> 2 -> 3 with a cost
+of 2. However, 1 -> 4 -> 3 has a cost of 1. So we didn't find the correct shortest path using 
+Dijkstra's algorithm. 
+</p>
+
+<H2>Bellman&ndash;Ford Algorithm</H2>
+<p>
+Dijkstra's algorithm uses a priority queue(Minheap, in our implementatoin) to greedily select the 
+closest vertex that has not yet been processed, and performs this process on all of its 
+outgoing edges. 
+</p>
+<p>The Bellman–Ford algorithm simply relaxes all the edges, and does it 
+(V - 1) times. V is the number of vertices in the graph. 
+In every repetition, for all edges, if the distance of a vertex can be shortened by 
+including the edge, the distance of that vertex is updated to the new lower distance.
+</p>
+<p>
+So Bellman–Ford algorithm runs in &Omicron;(VE) time. V is the number of vertices and 
+E is the number of edges.
+</p>
+
+<BLOCKQUOTE>
+When the algorithm is used to find shortest paths, the existence of negative cycles 
+(a cycle whose edges sum to a negative value) is a problem. In this case, there's no 
+shortest path.
+</BLOCKQUOTE>
+
+<p>
+Why is negative cycle a problem? 
+</p>
+
+<p>
+Because any path that has a point on the negative cycle can be made shorter by one more walk around 
+the negative cycle. This means that you can always go around the negative
+cycle and make the path shorter.
+The Bellman–Ford algorithm can detect negative cycles and report their existence.
+</p>
+
+<H2>Your assignment</H2>
+<UL>
+  <LI> Update your repository as usual.
+  <LI> In the <KBD>myextention.given</KBD> package of the <KBD>extensions</KBD> source
+folder, find and open the <KBD>NegativeSPath</KBD> class.
+  <LI> The constructor is finished for you. 
+  <LI> The graph is also initialized. 
+  <LI> You need to complete the method <KBD>void run()</KBD> which computes the shortest paths.
+</UL>
+<BLOCKQUOTE>
+You also need to detect negative cycles and print the error
+in the method <KBD>void run()</KBD>.
+</BLOCKQUOTE>
+<p>
+After you finish it, run the JUnit test <KBD>TestNegativeSPath</KBD> to see it you get it right.
+</p>
+To receive full credit for this lab, your solution must:
+<UL>
+  <LI> Pass the unit tests.
+  <LI> Don't forget to detext negative cycles and print the error.
+</UL>
+
+<H2>Having trouble?</H2>
+Post problems on <a href="http://www.piazza.com">piazza</a>, but do not 
+post code publicly there!
+<HR>
+<H2>How to submit your work</H2>
+<UL>
+ <LI> Make sure all of your work is commited in your repository.
+<BLOCKQUOTE>
+Note that we will run your solution against the JUnit test as it was
+given to you.  If you modify that test in some way, the results you see may
+not correspond with the testing necessary to receive credit.  
+<p>You can always
+revert any changes you make to the testing code back to what we gave you in
+the repository using <KBD>Team&hellip;Revert</KBD>, but be sure not to do that
+to your source code as it will wipe away work you may not have yet committed.
+</BLOCKQUOTE>
+ <LI> Your work will be graded as of the due date for this assignment.
+</UL>
+<!--#include virtual="end.html"--><br>
